@@ -88,7 +88,7 @@
 .slide-text{
   margin-top: 15vh;
   font-size: 30px;
-  margin-left: 15vw;
+  margin-left: 10vw;
   margin-right: 10vw;
   line-height: 200%;
 
@@ -98,6 +98,14 @@
   margin-top: 40vh;
   margin-right: 5vw;
   width: 10vw;
+}
+
+.slide-arrow-left{
+  margin-top: 40vh;
+  margin-left: 5vw;
+  width: 10vw;
+  transform: rotateY(180deg);
+
 }
 
 @media screen{

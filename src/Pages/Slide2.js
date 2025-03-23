@@ -7,7 +7,7 @@ import arrow from "../Assets/orange-arrow.jpg";
 const Slide2 = () => {
     return (
         <div className = "slide-div">
-            <Link to="/game"><img src = {arrow} alt = {"arrow"} className = {"slide-arrow-left"}></img></Link>
+            <Link to="/slide1"><img src = {arrow} alt = {"arrow"} className = {"slide-arrow-left"}></img></Link>
             <h5 className = "slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Duis viverra urna quis augue pretium lobortis. 
                 Donec nec nibh non nisl mollis volutpat. Vivamus iaculis interdum augue id sodales. 
