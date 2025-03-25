@@ -2,14 +2,15 @@ import y_canola_flowers from "./Assets/yellow_canola_flowers.png"
 import l_canola_flowers from "./Assets/light_canola_flowers.png"
 import d_canola_flowers from "./Assets/dark_canola_flowers.png"
 import close_flower from "./Assets/yellow-flowers-close-up.png"
-import PostCard from "./PostCard.js";
+
+
+import PrintModal from "./PrintModal.js";
 
 import './App.css';
 
 import { useState } from 'react';
-import {useRef} from 'react';
 
-import { useReactToPrint } from "react-to-print";
+
 
 function GeneEditor({plantPart}) {
 
@@ -20,11 +21,25 @@ function GeneEditor({plantPart}) {
         setFlowerColour(colour);
     }
     
-    const componentRef = useRef();
-    const handlePrint = useReactToPrint({
-        documentTitle: 'Title',
-        contentRef: componentRef,
-      });
+
+    
+    //Set up modal props
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    function openModal() {
+        setModalOpen(true);
+    }
+
+    function closeModal() {
+        setModalOpen(false);
+    }
+
+    //Global name variable for printing. 
+
+    const [name, setName] = useState("");
+    
+
 
     if (plantPart === 0){
         return (
@@ -37,15 +52,17 @@ function GeneEditor({plantPart}) {
                 <h1>mustard yellow</h1>
                 <img src = {close_flower} onClick = {() => changeColour(2)}/>
                 <h1>dark yellow</h1>
-                <button onClick = {() => handlePrint()}>Print!</button>
+                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flowerColour = {flowerColour}/>
+            
+                
             </div>
-            <PostCard flowerColour = {flowerColour} ref = {componentRef}/>
             </div>
         );
     }
     else{
         return (
-            <div ref = {componentRef}>
+            <div>
             <img src = {y_canola_flowers} alt = {"canola plant"}/>
             </div>
         );
