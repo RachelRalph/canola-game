@@ -40,20 +40,45 @@
 .selector{
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5vw;
+  padding-top: 5vw;
   margin-left: 25vw;
   margin-right: 25vw;
 }
 
 
+
 .canola-plant{
   height: 80vh;
 }
-.gene-editor{
-  display: flex;
-  justify-content: space-evenly
+
+.dna{
+  
+  height: 80vh;
+  padding-left: 5vw;
 }
 
+.dna-selector{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20vw;
+  margin-right: 5vw;
+
+}
+
+
+.gene-editor{
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 15vw;
+  width: 85vw;
+
+
+}
+
+
+.background {
+  z-index: -1;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -106,6 +131,12 @@
   width: 10vw;
   transform: rotateY(180deg);
 
+}
+
+.game-screen {
+  background-image: url("Assets/Watercolour-background.jpeg");
+  width: 100vw;
+  height: 100vh;
 }
 
 @media screen{
