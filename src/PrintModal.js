@@ -7,7 +7,7 @@ import { useReactToPrint } from "react-to-print";
 
 import PostCard from "./PostCard.js";
 
-function PrintModal({isOpen, closeModal,flowerColour}){
+function PrintModal({isOpen, closeModal,flower}){
     
 
 
@@ -42,7 +42,7 @@ function PrintModal({isOpen, closeModal,flowerColour}){
             </form>
             <button onClick = {() => {handleSubmit()}}>Print</button>
         </Modal>
-        <PostCard flowerColour = {flowerColour} ref = {componentRef} />
+        <PostCard flower = {flower} ref = {componentRef} name = {name}/>
         </div>
         
     )

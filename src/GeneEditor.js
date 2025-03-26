@@ -95,7 +95,7 @@ function GeneEditor({plantPart}) {
                     <h5>Remove gene XXXX</h5>
                 </div>
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flowerColour = {flowerColour}/>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]}/>
         
             </div>
             <img src = {dna} className = {"dna"}/>
@@ -110,6 +110,8 @@ function GeneEditor({plantPart}) {
             <div className = "dna-selector">
             <div className = {"colour-selector"}>
                 <FeatureSelector plantPart = {plantPart} setPlantType = {setPlantType}  getPlantType = {getPlantType} />
+                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {plants[plantType]}/>
             </div>
             <img src = {dna} className = {"dna"}/>
             </div>

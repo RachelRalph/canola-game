@@ -3,12 +3,12 @@ import w_canola_flowers from "./Assets/white_flower.png"
 
 import "./App.css";
 
-function PostCard({flowerColour, ref, name}){
+function PostCard({flower, ref, name}){
 
     const flowers = [y_canola_flowers, w_canola_flowers];
     return(
         <div ref = {ref} className = {"hide"}>
-            <img src = {flowers[flowerColour]}/>
+            <img src = {flower}/>
             <h4>{name}'s Canola Flower</h4>
         </div>
 
