@@ -45,18 +45,7 @@ function GeneEditor({plantPart}) {
     const getPlantType = () => {
         return plantType;
     }
-
-    /*
-
-    To change the root size: plant type -/+ 1
-    To change the # of pods: plant type -/+ 2
-    To change the hieght : plant type -/+ 4
-
-
-    */
-    
-
-    
+  
     //Set up modal props
 
     const [isModalOpen, setModalOpen] = useState(false);
@@ -78,22 +67,7 @@ function GeneEditor({plantPart}) {
             <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-plant"}/>
             <div className = "dna-selector">
             <div className = {"colour-selector"}>
-                <div className = {"choice"} onClick = {() => changeColour(0)}>
-                    <h3>yellow</h3>
-                    <h5>Remove gene XXXX</h5>
-                </div>
-                <div className = {"choice"} onClick = {() => changeColour(1)}>
-                    <h3>white</h3>
-                    <h5>Remove gene XXXX</h5>
-                </div>
-                <div className = {"choice"} onClick = {() => changeColour(2)}>
-                    <h3>blue</h3>
-                    <h5>Remove gene XXXX</h5>
-                </div>
-                <div className = {"choice"} onClick = {() => changeColour(3)}>
-                    <h3>purple</h3>
-                    <h5>Remove gene XXXX</h5>
-                </div>
+                <FeatureSelector plantPart = {plantPart} setPlantType = {changeColour} />
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]}/>
         
@@ -111,7 +85,7 @@ function GeneEditor({plantPart}) {
             <div className = {"colour-selector"}>
                 <FeatureSelector plantPart = {plantPart} setPlantType = {setPlantType}  getPlantType = {getPlantType} />
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {plants[plantType]}/>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]}/>
             </div>
             <img src = {dna} className = {"dna"}/>
             </div>

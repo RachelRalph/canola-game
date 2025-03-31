@@ -1,15 +1,16 @@
-import y_canola_flowers from "./Assets/yellow_flower.jpeg"
-import w_canola_flowers from "./Assets/white_flower.png"
 
 import "./App.css";
+import "./print.css"
+import background from "./Assets/Watercolour-background.jpeg"
 
-function PostCard({flower, ref, name}){
 
-    const flowers = [y_canola_flowers, w_canola_flowers];
+function PostCard({flower, name}){
+
     return(
-        <div ref = {ref} className = {"hide"}>
-            <img src = {flower}/>
-            <h4>{name}'s Canola Flower</h4>
+        <div className = {"postcard-div"}>
+            <img src = {background} className = {"postcard-background"}/>
+            <img src = {flower} className = {"postcard-flower"}/>
+            <h4 className = {"postcard-text"} >{name}'s Canola Flower</h4>
         </div>
 
     )

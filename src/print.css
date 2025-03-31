@@ -1,0 +1,77 @@
+/* CSS for printing things */
+@media screen{
+    .hide {
+      display: none;
+    }
+}
+
+@media print{
+    @page{
+        size: 101.6mm 152.4mm;
+    }
+}
+
+/* horizontal lines for postcards */
+.hline { height:40vh; width:3px; background: #000 }
+
+.vline { position: absolute; width: 90vw; height: 3px; left: 5vw; top: 50vh; background-color: #000}
+
+.lines{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    height: 45vh;
+    width: 55vw;
+    top: 55vh;
+}
+
+
+
+
+.postcard-div{ 
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-color: blue;
+    z-index: 0;
+}
+.postcard-background {
+    z-index: -1;
+    position: absolute;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+.postcard-flower {
+    z-index: 0;
+    position: absolute;
+    width: 60vw;
+    left: 20vw;
+    top: 10vw;
+}
+
+.postcard-text {
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    top: 90vh;
+    margin: auto;
+    width: 100vw;
+    display: block;
+}
+
+.postcard-plant{
+    position: absolute;
+    transform: rotate(90deg);
+    height: 90vw;
+    /*left: 35vw;*/
+    padding-right: 20vh;
+    padding-bottom: 30vw;
+    
+}
+
+
+

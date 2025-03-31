@@ -6,8 +6,10 @@ import { useState } from 'react';
 import { useReactToPrint } from "react-to-print";
 
 import PostCard from "./PostCard.js";
+import PostcardBack from "./PostcardBack.js"
 
-function PrintModal({isOpen, closeModal,flower}){
+
+function PrintModal({isOpen, closeModal, flower, plant}){
     
 
 
@@ -35,14 +37,18 @@ function PrintModal({isOpen, closeModal,flower}){
     return(
         <div>
         <Modal isOpen = {isOpen}>
-            <p>Hi!</p>
             <p>Please type your name</p>
             <form> 
                 <input type = "text" onChange = {(e) => setName(e.target.value)} />
             </form>
             <button onClick = {() => {handleSubmit()}}>Print</button>
+
+            <div ref = {componentRef} >
+            <PostCard flower = {flower} name = {name}/> 
+            <PostcardBack plant = {plant}/> 
+        </div>
         </Modal>
-        <PostCard flower = {flower} ref = {componentRef} name = {name}/>
+
         </div>
         
     )

@@ -1,5 +1,10 @@
 function FeatureSelector({plantPart, setPlantType, getPlantType}){
 
+
+    const changeFlowers = (num) => {
+        setPlantType(num);
+    }
+
     const changeRoots = (num) => {
         if (getPlantType() % 2 === 1 && num === - 1){
             setPlantType(getPlantType() - 1);
@@ -34,20 +39,30 @@ function FeatureSelector({plantPart, setPlantType, getPlantType}){
         }
     }
 
-    if (plantPart === 2){
+    if (plantPart === 0){
+
         return(
         <div className = {"colour-selector"}>
-            <div className = {"choice"} onClick = {() => changeRoots(-1)}>
-                <h3>shorter roots</h3>
-                <h5>Remove gene XXXX</h5>
-            </div>
-            <div className = {"choice"} onClick = {() => changeRoots(1)}>
-                <h3>longer roots</h3>
-                <h5>Remove gene XXXX</h5>
-            </div>
-        </div>);
-
+        <div className = {"choice"} onClick = {() => changeFlowers(0)}>
+            <h3>yellow</h3>
+            <h5>Remove gene XXXX</h5>
+        </div>
+        <div className = {"choice"} onClick = {() => changeFlowers(1)}>
+            <h3>white</h3>
+            <h5>Remove gene XXXX</h5>
+        </div>
+        <div className = {"choice"} onClick = {() => changeFlowers(2)}>
+            <h3>blue</h3>
+            <h5>Remove gene XXXX</h5>
+        </div>
+        <div className = {"choice"} onClick = {() => changeFlowers(3)}>
+            <h3>purple</h3>
+            <h5>Remove gene XXXX</h5>
+        </div>
+        </div>
+        );
     }
+
     if (plantPart === 1){
 
         return(
@@ -63,6 +78,22 @@ function FeatureSelector({plantPart, setPlantType, getPlantType}){
         </div>);
 
     }
+
+    if (plantPart === 2){
+        return(
+        <div className = {"colour-selector"}>
+            <div className = {"choice"} onClick = {() => changeRoots(-1)}>
+                <h3>shorter roots</h3>
+                <h5>Remove gene XXXX</h5>
+            </div>
+            <div className = {"choice"} onClick = {() => changeRoots(1)}>
+                <h3>longer roots</h3>
+                <h5>Remove gene XXXX</h5>
+            </div>
+        </div>);
+
+    }
+
 
     if (plantPart === 3){
 
