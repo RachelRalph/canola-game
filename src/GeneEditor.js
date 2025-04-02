@@ -72,7 +72,6 @@ function GeneEditor({plantPart}) {
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]}/>
         
             </div>
-            <img src = {dna} className = {"dna"}/>
             </div>
             </div>
         );

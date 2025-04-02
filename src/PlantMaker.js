@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
-import arrow from "./Assets/orange-arrow.jpg";
 import watercolour_background from "./Assets/Watercolour-background.jpeg"
+import dna from "./Assets/DNA.png"
 
 import './App.css';
 import GeneEditor from "./GeneEditor.js";
@@ -18,18 +18,15 @@ function PlantMaker() {
         setPlantPart((plantPart + 1) % 4);
     };
 
-    const togglePlantPartLeft = () => {
-        setPlantPart((plantPart - 1) % 4);
-    };
     
     return (
         <div className = "game-screen">
         <div className = "selector">
-            <img src ={arrow} alt = {"arrow"} className = {"left-arrow"} onClick = {togglePlantPartLeft}/>
-            <h1>{plantParts[plantPart]}</h1>
-            <img src ={arrow} alt = {"arrow"} className = {"right-arrow"} onClick = {togglePlantPartRight}/>
+            <h1 className = "sour-gummy-bold">{plantParts[plantPart]}</h1>
+            <h1 className = {"sour-gummy-bold"} onClick = {togglePlantPartRight}> &gt; </h1>
         </div>
-        <GeneEditor plantPart = {plantPart}/>
+        <GeneEditor plantPart = {plantPart} className = {"gene-editor"}/>
+        <img src = {dna} className = {"dna"}/>
         
         </div>
     );

@@ -1,7 +1,7 @@
 import '../App.css';
 import PlantMaker from "../PlantMaker.js"
 
-const Game = () => {
+const GameFlower = () => {
   return (
     <div className="App">
       <PlantMaker/>
@@ -9,4 +9,4 @@ const Game = () => {
   );
 }
 
-export default Game;
+export default GameFlower;

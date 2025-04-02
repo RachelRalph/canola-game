@@ -36,14 +36,14 @@ function PrintModal({isOpen, closeModal, flower, plant}){
 
     return(
         <div>
-        <Modal isOpen = {isOpen}>
+        <Modal isOpen = {isOpen} className = {"modal"}>
             <p>Please type your name</p>
             <form> 
                 <input type = "text" onChange = {(e) => setName(e.target.value)} />
             </form>
             <button onClick = {() => {handleSubmit()}}>Print</button>
 
-            <div ref = {componentRef} >
+        <div ref = {componentRef} className = {"hide"} >
             <PostCard flower = {flower} name = {name}/> 
             <PostcardBack plant = {plant}/> 
         </div>
