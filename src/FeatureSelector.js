@@ -45,19 +45,19 @@ function FeatureSelector({plantPart, setPlantType, getPlantType}){
         <div className = {"colour-selector"}>
         <div className = {"choice"} onClick = {() => changeFlowers(0)}>
             <h3 className = {"sour-gummy-sub"}>yellow</h3>
-            <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5>
+            {/*<h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5> */}
         </div>
         <div className = {"choice"} onClick = {() => changeFlowers(1)}>
             <h3 className = {"sour-gummy-sub"}>white</h3>
-            <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5>
+            {/* <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5> */}
         </div>
         <div className = {"choice"} onClick = {() => changeFlowers(2)}>
             <h3 className = {"sour-gummy-sub"}>blue</h3>
-            <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5>
+            { /* <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5> */}
         </div>
         <div className = {"choice"} onClick = {() => changeFlowers(3)}>
             <h3 className = {"sour-gummy-sub"}>purple</h3>
-            <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5>
+           {/* <h5 className = {"sour-gummy-sub-sub"}>Remove gene XXXX</h5> */}
         </div>
         </div>
         );

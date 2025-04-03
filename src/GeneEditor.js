@@ -64,12 +64,12 @@ function GeneEditor({plantPart}) {
     if (plantPart === 0){
         return (
             <div className = "gene-editor">
-            <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-plant"}/>
+            <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-flower"}/>
             <div className = "dna-selector">
             <div className = {"colour-selector"}>
                 <FeatureSelector plantPart = {plantPart} setPlantType = {changeColour} />
-                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]}/>
+                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Finish!</button>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
         
             </div>
             </div>
@@ -81,12 +81,9 @@ function GeneEditor({plantPart}) {
             <div className = "gene-editor">
             <img src = {plants[plantType]} alt = {"canola plant"} className = {"canola-plant"}/>
             <div className = "dna-selector">
-            <div className = {"colour-selector"}>
                 <FeatureSelector plantPart = {plantPart} setPlantType = {setPlantType}  getPlantType = {getPlantType} />
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]}/>
-            </div>
-            <img src = {dna} className = {"dna"}/>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]} isFlower = {false} type = {plantType}/>
             </div>
             </div>
         );

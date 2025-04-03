@@ -4,7 +4,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-import Game from "./Pages/GameFlower.js/index.js.js"
+import GameFlower from "./Pages/GameFlower.js"
+import GamePlant from "./Pages/GamePlant.js"
 import Start from "./Pages/Start.js"
 import Slide1 from "./Pages/Slide1.js"
 import Slide2 from "./Pages/Slide2.js"
@@ -18,7 +19,8 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route index element={<Start />} />
-      <Route path= "/game" element={<Game />} />
+      <Route path= "/game-flower" element={<GameFlower />} />
+      <Route path= "/game-plant" element={<GamePlant />} />
       <Route path= "/slide" element={<Slide1 />} />
       <Route path= "/slide2" element={<Slide2 />} />
       <Route path= "/choose-path" element={<PlantSelection />} />
