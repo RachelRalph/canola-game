@@ -31,7 +31,7 @@ export function GetPlantMod({type}){
 
 }
 
-function PrintText({isFlower, type}){
+function PrintText({isFlower, type, getters}){
 
     const colours = ["yellow", "white", "blue", "purple"]; 
 
@@ -51,7 +51,7 @@ function PrintText({isFlower, type}){
         return(
         <div>
             <p>Nicely done! You’ve created a brand new type of canola plant.</p>
-            <GetPlantMod type = {type}/>
+            {/*<GetPlantMod type = {type}/>*/}
             <p>Name and print your plant</p>
         </div>
         );

@@ -8,10 +8,12 @@ import { useReactToPrint } from "react-to-print";
 import PostCard from "./PostCard.js";
 import PostcardBack from "./PostcardBack.js";
 
+import Plant from "./Plant.js"
+
 import PrintText from "./PrintText.js";
 
 
-function PrintModal({isOpen, closeModal, flower, plant, isFlower, type}){
+function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, isFlower, type}){
     
 
 
@@ -35,7 +37,7 @@ function PrintModal({isOpen, closeModal, flower, plant, isFlower, type}){
     //Global name variable for printing. 
 
     const [name, setName] = useState(""); 
-
+    if (isFlower){
     return(
         <div>
         <Modal isOpen = {isOpen} className = {"modal"}>
@@ -46,14 +48,31 @@ function PrintModal({isOpen, closeModal, flower, plant, isFlower, type}){
             <button onClick = {() => {handleSubmit()}}>Print</button>
 
         <div ref = {componentRef} className = {"hide"} >
-            <PostCard flower = {flower} name = {name}/> 
-            <PostcardBack plant = {plant}/> 
+            <PostCard isFlower = {isFlower} flower = {flower} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} name = {name}/> 
+            <PostcardBack/> 
         </div>
         </Modal>
 
-        </div>
+        </div>);
         
-    )
+    }
+    else {
+        return(
+            <div>
+            <Modal isOpen = {isOpen} className = {"modal"}>
+                <form> 
+                    <input type = "text" onChange = {(e) => setName(e.target.value)} />
+                </form>
+                <button onClick = {() => {handleSubmit()}}>Print</button>
+    
+            <div ref = {componentRef} className = {"hide"} >
+                <PostCard isFlower = {isFlower} flower = {flower} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} name = {name}/> 
+                <PostcardBack/> 
+            </div>
+            </Modal>
+    
+            </div>);
+    }
 
 }
 

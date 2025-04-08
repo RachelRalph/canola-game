@@ -1,23 +1,20 @@
 /* CSS for printing things */
 @media screen{
-    .hide {
+    /*hide {
       display: none;
-    }
+    }*/
 }
 
 @media print{
     @page{
         size: 101.6mm 152.4mm;
     }
-}
-
-
-
 
 .back{
     width: 100vw;
     height: 100vh;
     margin: 0px;
+    
 }
 
 .postcard-div{ 
@@ -27,6 +24,7 @@
     margin: 0px;
     background-color: blue;
     z-index: 0;
+
 }
 .postcard-background {
     z-index: -1;
@@ -35,9 +33,18 @@
     width: 100vw;
     height: 100vh;
     margin: 0px;
+    
+}
+.postcard-flower {
+    z-index: 0;
+    position: absolute;
+    width: 60vw;
+    left: 20vw;
+    top: 10vw;
+    
 }
 
-.postcard-flower {
+.postcard-plant {
     z-index: 0;
     position: absolute;
     width: 60vw;
@@ -52,7 +59,7 @@
     top: 90vh;
     margin: auto;
     width: 100vw;
-    display: block;
+}
 }
 
 

@@ -56,6 +56,10 @@
   color: #61dafb;
 }
 
+#openModal{
+  position: absolute;
+  top: 90vh;
+}
 
 .background {
   width: 100vw !important;
@@ -102,7 +106,7 @@
 .colour-selector{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 50vh;
   width: 10vw;
 
 }
@@ -139,14 +143,10 @@
     z-index: 0;
 }
 
-.longRoots .animation{
-  width: 40vw;
-  background-color: red;
-}
 
 .longRoots video{
   position: absolute;
-  top: 70vh;
+  top: 50vh;
   left: 1.25vw;
   height: 25vh !important;
   width: 60vw !important;
@@ -154,7 +154,7 @@
 
 .shortRoots video{
   position: absolute;
-  top: 70.5vh;
+  top: 50.5vh;
   left: 0.75vw;
   height: 25vh !important;
   width: 60vw !important;

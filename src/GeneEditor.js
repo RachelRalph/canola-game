@@ -13,6 +13,7 @@ import { useState } from 'react';
 
 import FeatureSelector from "./FeatureSelector.js"
 
+import PostCard from "./PostCard"
 
 
 function GeneEditor({plantPart}) {
@@ -54,6 +55,8 @@ function GeneEditor({plantPart}) {
     const getPods = () => { return pods;}
     const setPods = (value) => {_setPods(value); setAnimatePods(true); console.log("Pods are ", value)}
 
+    const plantGetters = [getRoots, getHeight, getPods];
+
     
   
     //Set up modal props
@@ -76,12 +79,9 @@ function GeneEditor({plantPart}) {
             <div className = "gene-editor">
             <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-flower"}/>
             <div className = "dna-selector">
-            <div className = {"colour-selector"}>
                 <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} />
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Finish!</button>
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
-        
-            </div>
             </div>
             </div>
         );
@@ -93,9 +93,11 @@ function GeneEditor({plantPart}) {
             <div className = "dna-selector">
                 <FeatureSelector plantPart = {plantPart} setRoots = {setRoots} setStem = {setHeight} setPods = {setPods}/>
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                {/*<PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]} isFlower = {false} type = {plantType}/> */}
+                {<PrintModal  isOpen = {isModalOpen} closeModal = {closeModal} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} isFlower = {false} /> }
             </div>
+            <PostCard isFlower = {false} flower = {flowers[flowerColour]} getRoots = {getRoots} getHeight = {getHeight} getPods ={getPods} name ={"RACHEL"}/>
             </div>
+            
         );
     }
 
