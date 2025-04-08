@@ -1,21 +1,11 @@
-import y_canola_flowers from "./Assets/yellow_flower.jpeg"
+import y_canola_flowers from "./Assets/yellow_flower.png"
 import w_canola_flowers from "./Assets/white_flower.png"
 import b_canola_flowers from "./Assets/blue_flower.png"
-import p_canola_flowers from "./Assets/purple_flower.jpeg"
-
-import sr_mp_ts_plant from "./Assets/sr_ts_mp_plant.png"
-import lr_mp_ts_plant from "./Assets/lr_ts_mp_plant.png"
-import sr_fp_ts_plant from "./Assets/sr_ts_fp_plant.png"
-import lr_fp_ts_plant from "./Assets/lr_ts_fp_plant.png"
-import sr_mp_ss_plant from "./Assets/sr_ss_mp_plant.png"
-import lr_mp_ss_plant from "./Assets/lr_ss_mp_plant.png"
-import sr_fp_ss_plant from "./Assets/sr_ss_fp_plant.png"
-import lr_fp_ss_plant from "./Assets/lr_ss_fp_plant.png"
-
-import dna from "./Assets/DNA.png"
+import p_canola_flowers from "./Assets/purple_flower.png"
 
 
 import PrintModal from "./PrintModal.js";
+import Plant from "./Plant.js"
 
 import './App.css';
 
@@ -39,12 +29,32 @@ function GeneEditor({plantPart}) {
 
     //Hooks for the root / pod / height combinations
 
-    const [plantType, setPlantType] = useState(0);
-    const plants = [sr_mp_ts_plant, lr_mp_ts_plant, sr_fp_ts_plant, lr_fp_ts_plant, sr_mp_ss_plant, lr_mp_ss_plant, sr_fp_ss_plant, lr_fp_ss_plant]
+    const [roots, _setRoots] = useState("short");
+    const [animateRoots, _setAnimateRoots] = useState(false)
 
-    const getPlantType = () => {
-        return plantType;
-    }
+    const getRoots = () => { return roots;}
+    const setRoots = (value) => { _setRoots(value); console.log(animateRoots); setAnimateRoots(true); console.log("Set Roots");}
+
+    const setAnimateRoots = (value) => {console.log("Animate roots is ", value); _setAnimateRoots(value)}
+    const getAnimateRoots = () => {return(animateRoots)}
+
+    const [height, _setHeight] = useState("tall");
+
+    const getHeight = () => { return height;}
+    const setHeight = (value) => {_setHeight(value)}
+
+    /*TODO: ADD height animations */
+
+    const [pods, _setPods] = useState("few");
+    const [animatePods, _setAnimatePods] = useState(false)
+
+    const getAnimatePods = () => {return animatePods;}
+    const setAnimatePods = (value) => {_setAnimatePods(value); console.log("Animate pods is", value)};
+
+    const getPods = () => { return pods;}
+    const setPods = (value) => {_setPods(value); setAnimatePods(true); console.log("Pods are ", value)}
+
+    
   
     //Set up modal props
 
@@ -67,7 +77,7 @@ function GeneEditor({plantPart}) {
             <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-flower"}/>
             <div className = "dna-selector">
             <div className = {"colour-selector"}>
-                <FeatureSelector plantPart = {plantPart} setPlantType = {changeColour} />
+                <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} />
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Finish!</button>
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
         
@@ -79,11 +89,11 @@ function GeneEditor({plantPart}) {
     else{
         return (
             <div className = "gene-editor">
-            <img src = {plants[plantType]} alt = {"canola plant"} className = {"canola-plant"}/>
+            <Plant getRoots = {getRoots} getPods = {getPods} getAnimateRoots = {getAnimateRoots} getAnimatePods = {getAnimatePods} setAnimateRoots = {setAnimateRoots} setAnimatePods = {setAnimatePods} getHeight = {getHeight}/>
             <div className = "dna-selector">
-                <FeatureSelector plantPart = {plantPart} setPlantType = {setPlantType}  getPlantType = {getPlantType} />
+                <FeatureSelector plantPart = {plantPart} setRoots = {setRoots} setStem = {setHeight} setPods = {setPods}/>
                 <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]} isFlower = {false} type = {plantType}/>
+                {/*<PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} plant = {plants[plantType]} isFlower = {false} type = {plantType}/> */}
             </div>
             </div>
         );

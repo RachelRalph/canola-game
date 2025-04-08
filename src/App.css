@@ -120,11 +120,117 @@
     margin-top: 10vh;
 }
 
-.canola-plant{
-  width: 10vw;
-  padding-left: 25vw;
-  margin-top: 10vh;
+
+
+.shortRoots > .image{
+  position: absolute;
+  top: 72.5vh;
+  left: 25vw;
+  height: 20vh;
+  z-index: 0;
 }
+
+
+.longRoots > .image{
+    position: absolute;
+    top: 73vh;
+    left: 26vw;
+    height: 20vh;
+    z-index: 0;
+}
+
+.longRoots .animation{
+  width: 40vw;
+  background-color: red;
+}
+
+.longRoots video{
+  position: absolute;
+  top: 70vh;
+  left: 1.25vw;
+  height: 25vh !important;
+  width: 60vw !important;
+}
+
+.shortRoots video{
+  position: absolute;
+  top: 70.5vh;
+  left: 0.75vw;
+  height: 25vh !important;
+  width: 60vw !important;
+}
+
+.tallPlant > .image{
+  height: 50vh;
+}
+
+
+.tallPlant{
+  position: absolute;
+  left: 26vw;
+  top: 25vh;
+}
+
+.shortPlant > .image{
+  height: 40vh;
+  position: absolute;
+  left: 25vw;
+  top: 35vh;
+  z-index: 1;
+}
+
+
+.shortplant > .animation{
+  padding-left: 20vw;
+  background-color: yellow;
+  position: absolute;
+  left: 16vw;
+  top: 35vh;
+  z-index: 1;
+}
+
+.pos-div{
+  position: absolute;
+  width: 20vw !important;
+  left: 25vw !important;
+  top: 35vh !important;
+}
+
+.pos-div-2{
+  position: absolute;
+  width: 100% !important;
+  z-index: 2;
+}
+
+.shortPlantManyPods > .image{
+  height: 40vh;
+  position: relative;
+  top: 0vh;
+  left: -4.5vh;
+  z-index: 1;
+
+}
+
+.shortPlantManyPods video{
+  height: 200vh !important;
+  width: 200vh !important;
+  position: relative;
+  z-index: 1;
+  left: -83vh;
+  top: -77vh;
+
+}
+
+.shortPlantFewPods video{
+  height: 70vh !important;
+  width: 70vh!important;
+  position: relative;
+  top: -10vh;
+  left: 28vh;
+  z-index: 1;
+
+}
+
 
 .dna{
   height: 100vh;

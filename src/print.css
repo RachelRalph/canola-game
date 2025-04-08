@@ -11,22 +11,14 @@
     }
 }
 
-/* horizontal lines for postcards */
-.hline { height:40vh; width:3px; background: #000 }
 
-.vline { position: absolute; width: 90vw; height: 3px; left: 5vw; top: 50vh; background-color: #000}
 
-.lines{
-    position: absolute;
-    display: flex;
-    justify-content: space-evenly;
-    height: 45vh;
-    width: 55vw;
-    top: 55vh;
+
+.back{
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
 }
-
-
-
 
 .postcard-div{ 
     position: relative;
@@ -63,15 +55,7 @@
     display: block;
 }
 
-.postcard-plant{
-    position: absolute;
-    transform: rotate(90deg);
-    height: 90vw;
-    /*left: 35vw;*/
-    padding-right: 20vh;
-    padding-bottom: 30vw;
-    
-}
+
 
 
 
