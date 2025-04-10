@@ -12,7 +12,7 @@
 
 .back{
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     margin: 0px;
     
 }
@@ -22,7 +22,6 @@
     width: 100vw;
     height: 100vh;
     margin: 0px;
-    background-color: blue;
     z-index: 0;
 
 }
@@ -31,25 +30,26 @@
     position: absolute;
     object-fit: cover;
     width: 100vw;
-    height: 100vh;
+    height: 99vh;
     margin: 0px;
     
 }
 .postcard-flower {
     z-index: 0;
     position: absolute;
-    width: 60vw;
-    left: 20vw;
-    top: 10vw;
+    width: 80vw;
+    left: 10vw;
+    top: -10vh;
+
     
 }
 
 .postcard-plant {
     z-index: 0;
     position: absolute;
-    width: 60vw;
+    width: 70vw;
     left: 20vw;
-    top: 10vw;
+    top: -50vw;
 }
 
 .postcard-text {

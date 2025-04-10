@@ -1,7 +1,6 @@
 
 import { useState } from 'react';
-import watercolour_background from "../Assets/Watercolour-background.jpeg"
-import dna from "../Assets/DNA.png"
+import watercolour_background from "../Assets/Background.png"
 import PrintText from "../PrintText.js"
 
 import '../App.css';
@@ -26,6 +25,8 @@ function PlantMaker() {
         "Canola seed pods are where much of their food value comes from. \n Adding more pods increases their yield and strengthens the food supply."
 
     ]
+
+    if (plantPart != 3){
     
     return (
         <div className = "game-screen">
@@ -37,10 +38,27 @@ function PlantMaker() {
         <h3 className = "sour-gummy display-linebreak">{plant_text[plantPart]}</h3>
         </div>
         <GeneEditor plantPart = {plantPart} className = {"gene-editor"}/>
-        <img src = {dna} className = {"dna"}/>
         
         </div>
     );
-}
+    }
+
+    else{
+        return (
+            <div className = "game-screen">
+            <div className = "game-text">
+            <div className = "selector">
+                <h1 className = "sour-gummy-bold">{plantParts[plantPart]}</h1>
+            </div>
+            <h3 className = "sour-gummy display-linebreak">{plant_text[plantPart]}</h3>
+            </div>
+            <GeneEditor plantPart = {plantPart} className = {"gene-editor"}/>
+            
+            </div>
+        );
+        }
+
+    }
+
 
 export default PlantMaker;

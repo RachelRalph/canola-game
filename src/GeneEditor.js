@@ -15,6 +15,7 @@ import FeatureSelector from "./FeatureSelector.js"
 
 import PostCard from "./PostCard"
 
+import Dna from "./Dna";
 
 function GeneEditor({plantPart}) {
 
@@ -23,9 +24,11 @@ function GeneEditor({plantPart}) {
 
     const [flowerColour, setFlowerColour] = useState(0);
     const flowers = [y_canola_flowers, w_canola_flowers, b_canola_flowers, p_canola_flowers];
+    const width = ["25vw", "23.5vw", "28vw", "25vw"]
 
     const changeColour = (colour) => {
         setFlowerColour(colour);
+        setAnimateDNA(true);
     }
 
     //Hooks for the root / pod / height combinations
@@ -34,15 +37,24 @@ function GeneEditor({plantPart}) {
     const [animateRoots, _setAnimateRoots] = useState(false)
 
     const getRoots = () => { return roots;}
-    const setRoots = (value) => { _setRoots(value); console.log(animateRoots); setAnimateRoots(true); console.log("Set Roots");}
+    const setRoots = (value) => { if (roots != value){
+        _setRoots(value);
+        setAnimateRoots(true);
+        setAnimateDNA(true);
+    }}
 
-    const setAnimateRoots = (value) => {console.log("Animate roots is ", value); _setAnimateRoots(value)}
+    const setAnimateRoots = (value) => { _setAnimateRoots(value);}
     const getAnimateRoots = () => {return(animateRoots)}
 
     const [height, _setHeight] = useState("tall");
 
     const getHeight = () => { return height;}
-    const setHeight = (value) => {_setHeight(value)}
+    const setHeight = (value) => { if (height != value){
+        _setHeight(value)
+        setAnimateDNA(true);
+    }
+
+    }
 
     /*TODO: ADD height animations */
 
@@ -53,9 +65,13 @@ function GeneEditor({plantPart}) {
     const setAnimatePods = (value) => {_setAnimatePods(value); console.log("Animate pods is", value)};
 
     const getPods = () => { return pods;}
-    const setPods = (value) => {_setPods(value); setAnimatePods(true); console.log("Pods are ", value)}
+    const setPods = (value) => {if (pods != value){
+        _setPods(value);
+        setAnimatePods(true);
+        setAnimateDNA(true);
+    }}
 
-    const plantGetters = [getRoots, getHeight, getPods];
+    const [animateDNA, setAnimateDNA] = useState(false)
 
     
   
@@ -77,12 +93,13 @@ function GeneEditor({plantPart}) {
     if (plantPart === 0){
         return (
             <div className = "gene-editor">
-            <img src = {flowers[flowerColour]} alt = {"canola plant"} className = {"canola-flower"}/>
+            <img src = {flowers[flowerColour]} alt = {"canola plant"} style = {{width : width[flowerColour]}}className = {"canola-flower"}/>
             <div className = "dna-selector">
-                <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} />
-                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Finish!</button>
+                <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} style = {{backgroundColor : "blue"}}/>
+                <button className = {"choice"}  id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}><h3 className = "sour-gummy-sub">Finish!</h3></button>
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
             </div>
+            <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>
         );
     }
@@ -92,10 +109,10 @@ function GeneEditor({plantPart}) {
             <Plant getRoots = {getRoots} getPods = {getPods} getAnimateRoots = {getAnimateRoots} getAnimatePods = {getAnimatePods} setAnimateRoots = {setAnimateRoots} setAnimatePods = {setAnimatePods} getHeight = {getHeight}/>
             <div className = "dna-selector">
                 <FeatureSelector plantPart = {plantPart} setRoots = {setRoots} setStem = {setHeight} setPods = {setPods}/>
-                <button id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}>Print!</button>
+                <button id = "openModal" className = "choice" onClick = {() => {openModal(); console.log(isModalOpen); }}><h4 className = "sour-gummy-sub">Print!</h4></button>
                 {<PrintModal  isOpen = {isModalOpen} closeModal = {closeModal} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} isFlower = {false} /> }
             </div>
-            <PostCard isFlower = {false} flower = {flowers[flowerColour]} getRoots = {getRoots} getHeight = {getHeight} getPods ={getPods} name ={"RACHEL"}/>
+            <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>
             
         );

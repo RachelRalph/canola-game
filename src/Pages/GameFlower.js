@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import watercolour_background from "../Assets/Watercolour-background.jpeg"
+import watercolour_background from "../Assets/Background.png"
 import dna from "../Assets/DNA.png"
 
 import '../App.css';
@@ -15,7 +15,6 @@ const GameFlower = () => {
             <h3 className = "sour-gummy">Canola flowers are yellow by default. <br/>As the plant matures, these flowers fall away and are replaced by seed pods.</h3>
         </div>
         <GeneEditor plantPart = {0} className = {"gene-editor"}/>
-        <img src = {dna} className = {"dna"}/>
         
         </div>
   );
