@@ -13,7 +13,7 @@ function PostCard({isFlower, flower,getRoots, getHeight, getPods, name}){
         <div className = {"postcard-div"}>
             <img src = {background} className = {"postcard-background"}/>
             <img src = {flower} className = {"postcard-flower"}/>
-            <h4 className = {"postcard-text"} >{name}'s Canola Plant</h4>
+            <h4 className = {"postcard-text"} >{name} THE CANOLA PLANT</h4>
         </div>
 
     )}
@@ -21,8 +21,10 @@ function PostCard({isFlower, flower,getRoots, getHeight, getPods, name}){
         return(
         <div className = {"postcard-div"}>
             <img src = {background} className = {"postcard-background"}/>
-            <Plant className = {"postcard-plant"} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} getAnimatePods = {() => {return false;}} getAnimateRoots = {() => {return false;}}
-            setAnimatePods = {() => {}} setAnimateRoots = {() => {}} className = {"postcard-plant"}/>
+            <div className = "postcard-plant">
+            <Plant getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} getAnimatePods = {() => {return false;}} getAnimateRoots = {() => {return false;}}
+            setAnimatePods = {() => {}} setAnimateRoots = {() => {}}/>
+            </div>
             <h4 className = {"postcard-text"} >{name}'s Canola Plant</h4>
         </div>);
 

@@ -1,4 +1,4 @@
-function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods}){
+function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, getRoots, getStem, getPods}){
 
 
     if (plantPart === 0){
@@ -26,10 +26,10 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods}){
         return(
         <div className = {"colour-selector"}>
             <div className = {"choice"} onClick = {() => setPods("few")}>
-                <h3>few pods</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>few pods</h3>
             </div>
             <div className = {"choice"} onClick = {() => setPods("many")}>
-                <h3>more pods</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>more pods</h3>
             </div>
         </div>);
 
@@ -39,10 +39,10 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods}){
         return(
         <div className = {"colour-selector"}>
             <div className = {"choice"} onClick = {() => setRoots("short")}>
-                <h3>shorter roots</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter roots</h3>
             </div>
             <div className = {"choice"} onClick = {() => setRoots("long")}>
-                <h3>longer roots</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer roots</h3>
             </div>
         </div>);
 
@@ -54,10 +54,10 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods}){
         return(
         <div className = {"colour-selector"}>
             <div className = {"choice"} onClick = {() => setStem("short")}>
-                <h3>shorter plant</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter plant</h3>
             </div>
             <div className = {"choice"} onClick = {() => setStem("tall")}>
-                <h3>longer plant</h3>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer plant</h3>
             </div>
         </div>);
 

@@ -9,7 +9,7 @@ function Animation({video, png, getAnimate, setAnimate}) {
 
     if (getAnimate()){
     return (
-       <ReactPlayer url = {video} muted = {true} playing={true} loop={false}  onEnded = {onEnd}  className = "animation pos-div-2"></ReactPlayer>
+       <ReactPlayer url = {video} muted = {true} playing={true} loop={false}  onEnded = {onEnd} className = "animation pos-div-2"></ReactPlayer>
         );
     }
     else {

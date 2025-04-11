@@ -37,7 +37,7 @@ function GeneEditor({plantPart}) {
     const [animateRoots, _setAnimateRoots] = useState(false)
 
     const getRoots = () => { return roots;}
-    const setRoots = (value) => { if (roots != value){
+    const setRoots = (value) => { if (roots !== value){
         _setRoots(value);
         setAnimateRoots(true);
         setAnimateDNA(true);
@@ -49,7 +49,7 @@ function GeneEditor({plantPart}) {
     const [height, _setHeight] = useState("tall");
 
     const getHeight = () => { return height;}
-    const setHeight = (value) => { if (height != value){
+    const setHeight = (value) => { if (height !== value){
         _setHeight(value)
         setAnimateDNA(true);
     }
@@ -65,7 +65,7 @@ function GeneEditor({plantPart}) {
     const setAnimatePods = (value) => {_setAnimatePods(value); console.log("Animate pods is", value)};
 
     const getPods = () => { return pods;}
-    const setPods = (value) => {if (pods != value){
+    const setPods = (value) => {if (pods !== value){
         _setPods(value);
         setAnimatePods(true);
         setAnimateDNA(true);

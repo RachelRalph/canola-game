@@ -11,6 +11,7 @@ import tallPlantFewPods from "./Assets/Plants/TallPlant.png";
 /*Pods*/
 
 import shortPlantManyPods from "./Assets/Plants/output.png";
+import tallPlantManyPods from "./Assets/Animations/output.webp";
 
 
 /*Videos*/
@@ -20,19 +21,19 @@ import growingRootsReverse from "./Assets/Animations/NEWGrowingRootsReverse.webm
 import tallPlantGrowingPods from "./Assets/Animations/NEWTallPlantsMorePods.webm";
 import tallPlantGrowingPodsReverse from "./Assets/Animations/NEWTallPlantsMorePodsREVERSE.webm";
 
-import shortPlantGrowingPods from "./Assets/Animations/ShortPlantsMorePods.webm";
-import shortPlantGrowingPodsReverse from "./Assets/Animations/NEWShortPlantsMorePodsREVERSE.webm"
+import shortPlantGrowingPods from "./Assets/Animations/NEWShortPlantsMorePods.webm";
+import shortPlantGrowingPodsReverse from "./Assets/Animations/NEW_NEWShortPlantsMorePodsREVERSE.webm"
 
 import Animation from "./Animation.js";
 import  './App.css';
 
 export function Roots({getRoots, getAnimateRoots, setAnimateRoots}){
     if(getRoots() === "short"){
-        return( <div className = "shortRoots"><Animation video = {growingRootsReverse} png = {shortRoots} getAnimate= {getAnimateRoots} setAnimate = {setAnimateRoots}/></div>);
+        return( <div className = "shortRoots pos-div"><Animation video = {growingRootsReverse} png = {shortRoots} getAnimate= {getAnimateRoots} setAnimate = {setAnimateRoots}/></div>);
     }
     else{
         return(
-         <div className = "longRoots"><Animation video = {growingRoots} png = {longRoots} getAnimate= {getAnimateRoots} setAnimate = {setAnimateRoots}/></div>
+         <div className = "longRoots pos-div"><Animation video = {growingRoots} png = {longRoots} getAnimate= {getAnimateRoots} setAnimate = {setAnimateRoots}/></div>
        );
     }
     
@@ -41,12 +42,12 @@ export function Roots({getRoots, getAnimateRoots, setAnimateRoots}){
 export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
     if (getHeight() === "short" && getPods() === "few"){
         return( 
-        <div className = "shortPlant shortPlantFewPods">
+        <div className = "shortPlant shortPlantFewPods pos-div">
         <Animation video = {shortPlantGrowingPodsReverse} png = {shortPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/>
         </div>);
     }
     else if (getHeight() === "tall" && getPods() === "few"){
-        return (<div className = "tallPlant"> <Animation video = {tallPlantGrowingPodsReverse} png = {tallPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/></div>);
+        return (<div className = "tallPlant tallPlantFewPods pos-div"> <Animation video = {tallPlantGrowingPodsReverse} png = {tallPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/></div>);
     }
 
     else if(getHeight() === "short"  && getPods() === "many"){
@@ -56,7 +57,7 @@ export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
     }
 
     else if(getHeight() === "tall" && getPods() === "many"){
-        return (<div className = "tallPlant"><Animation video = {tallPlantGrowingPods} png = {tallPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/></div> );
+        return (<div className = "tallPlant tallPlantManyPods pos-div"><Animation video = {tallPlantGrowingPods} png = {tallPlantManyPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/></div> );
     }
 
     

@@ -16,6 +16,7 @@
 .sour-gummy {
   font-family: "Sour Gummy";
   font-weight: 300;
+  font-size: 24px;
 }
 
 .sour-gummy-bold {
@@ -132,42 +133,42 @@
 .canola-flower{
     width: 25vw;
     padding-left: 17.5vw;
-    margin-top: -5vh;
+    margin-top: -10vh;
 }
 
 
 
 .shortRoots > .image{
-  position: absolute;
-  top: 72.5vh;
-  left: 25vw;
+  position: relative;
+  top: -10vh;
+  left: 0vw;
   height: 20vh;
   z-index: 0;
 }
 
 
 .longRoots > .image{
-    position: absolute;
-    top: 73vh;
-    left: 26vw;
-    height: 20vh;
+    position: relative;
+    top: -11vh;
+    left: 0vh;
+    height: 25vh;
     z-index: 0;
 }
 
 
 .longRoots video{
-  position: absolute;
-  top: 50vh;
-  left: 1.25vw;
-  height: 25vh !important;
+  position: relative;
+  top: -14.5vh;
+  left: -24.5vw;
+  height: 30vh !important;
   width: 60vw !important;
 }
 
 .shortRoots video{
-  position: absolute;
-  top: 50.5vh;
-  left: 0.75vw;
-  height: 25vh !important;
+  position: relative;
+  top: -13.5vh;
+  left: -58vh;
+  height: 30vh !important;
   width: 60vw !important;
 }
 
@@ -176,67 +177,93 @@
 }
 
 
-.tallPlant{
-  position: absolute;
-  left: 26vw;
-  top: 25vh;
+.tallPlant > .image{
+  position: relative;
+  left: 2.5vh;
+  top: -8vh;
 }
 
 .shortPlant > .image{
   height: 40vh;
-  position: absolute;
-  left: 25vw;
-  top: 35vh;
+  position: relative;
+  left: 0vh;
+  top: -7vh;
 }
 
 
-.shortplant > .animation{
-  padding-left: 20vw;
-  background-color: yellow;
-  position: absolute;
-  left: 16vw;
-  top: 35vh;
-}
 
 .pos-div{
-  position: absolute;
+  position: relative;
   width: 20vw !important;
   left: 25vw !important;
-  top: 35vh !important;
+  top: 15vh !important;
+
+}
+
+.shortPlantManyPods > .animation{
+  width: 40vh !important;
+  height: auto !important;
+}
+
+.shortPlantFewPods > .animation{
+  width: 40vh !important;
+  height: auto !important;
 }
 
 .pos-div-2{
-  position: absolute;
+  position: relative;
+  left: 0vw !important;
+  top: 0vh !important;
   width: 100% !important;
 }
 
 .shortPlantManyPods > .image{
   height: 40vh;
   position: relative;
-  top: 0vh;
+  top: -7vh;
   left: -4.5vh;
 }
 
-.shortPlantManyPods video{
-  height: 200vh !important;
-  width: 200vh !important;
+.tallPlantManyPods > .image{
+  height: 50vh;
   position: relative;
-  z-index: 1;
-  left: -83vh;
-  top: -77vh;
+  top: -4vh;
+  left: -4.5vh;
+}
+
+
+
+
+.shortPlantManyPods video{
+  height: 40vh;
+  position: relative;
+  top: -2vh;
+  left: -8vh;
 
 }
 
 .shortPlantFewPods video{
-  height: 70vh !important;
-  width: 70vh!important;
+  height: 40vh;
   position: relative;
-  top: -10vh;
-  left: 28vh;
-  z-index: 1;
+  top: -4vh;
+  left: -8vh;
 
 }
 
+.tallPlantManyPods video {
+  height: 40vh;
+  position: relative;
+  top: -5vh;
+  left: -10vh;
+}
+
+.tallPlantFewPods video {
+  height: 40vh;
+  position: relative;
+  top: -5vh;
+  left: -10vh;
+
+}
 
 .dna{
   height: 100vh;
@@ -301,8 +328,8 @@
 .slide-text{
   position: absolute;
   z-index: 1;
-  top: 15vh;
-  font-size: 30px;
+  top: 5vh;
+  font-size: 40px;
   margin-left: 10vw;
   margin-right: 10vw;
   line-height: 200%;
@@ -312,7 +339,7 @@
 .arrow{
   position: absolute;
   z-index: 1;
-  font-size: 48px;
+  font-size: 64px;
   top: 22vh;
   left: 92vw;
   color: black;
@@ -348,7 +375,6 @@
 
 
 .game-screen {
-  background-image: url("Assets/Background.png");
   z-index: -2;
   width: 100vw;
   height: 100vh;

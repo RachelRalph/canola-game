@@ -13,24 +13,18 @@ import Plant from "./Plant.js"
 import PrintText from "./PrintText.js";
 import Keyboard from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
+import { useNavigate} from "react-router-dom";
 
 
 function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, isFlower, type}){
 
     const layout = {
         'default': [
-          '` 1 2 3 4 5 6 7 8 9 0 - = {bksp}',
-          '{tab} q w e r t y u i o p [ ] \\',
-          '{lock} a s d f g h j k l ; \' print',
-          '{shift} z x c v b n m , . / {shift}',
-          '.com @ {space}'
-        ],
-        'shift': [
           '~ ! @ # $ % ^ &amp; * ( ) _ + {bksp}',
-          '{tab} Q W E R T Y U I O P { } |',
-          '{lock} A S D F G H J K L : " print',
-          '{shift} Z X C V B N M &lt; &gt; ? {shift}',
-          '.com @ {space}'
+          ' Q W E R T Y U I O P { } |',
+          ' A S D F G H J K L : " print',
+          ' Z X C V B N M &lt; &gt; ? ',
+          '@ .com {space}'
         ]
       }
     
@@ -47,10 +41,11 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
     //Set up state for printing
 
     const componentRef = useRef();
+    let navigate = useNavigate();
     const handlePrint = useReactToPrint({
         documentTitle: 'Title',
         contentRef: componentRef,
-        onAfterPrint: () => {closeModal();}
+        onAfterPrint: () => {console.log("hi"); closeModal(); setName(""); navigate("/");}
       });
 
     //Global name variable for printing. 
@@ -64,7 +59,7 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
     }
 
     const onChange = name => {
-        if (name.length < 5 || name.slice(-5) != "print"){
+        if (name.length < 5 || name.slice(-5) !== "print"){
             setName(name);
         }
        }
@@ -95,7 +90,6 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
                     <h1>{name}</h1>
                 </form>
                 <Keyboard onChange = {onChange} layout = {layout} onKeyPress = {onKeyPress} style = {{width : "100vw"}} className = {"keyboard"}> </Keyboard>
-    
             </Modal>
             <div ref = {componentRef} className = {"hide"} >
                 <PostCard isFlower = {isFlower} flower = {flower} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} name = {name}/> 

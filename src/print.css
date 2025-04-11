@@ -48,8 +48,8 @@
     z-index: 0;
     position: absolute;
     width: 70vw;
-    left: 20vw;
-    top: -50vw;
+    left: 5vw;
+    top: 10vh;
 }
 
 .postcard-text {
