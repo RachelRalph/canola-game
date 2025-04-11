@@ -44,9 +44,8 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
             <div className = {"choice"} onClick = {() => setRoots("long")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer roots</h3>
             </div>
-        </div>);
-
-    }
+        </div>);}
+    
 
 
     if (plantPart === 2){
