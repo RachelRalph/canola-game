@@ -25,7 +25,7 @@ function PostCard({isFlower, flower,getRoots, getHeight, getPods, name}){
             <Plant getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} getAnimatePods = {() => {return false;}} getAnimateRoots = {() => {return false;}}
             setAnimatePods = {() => {}} setAnimateRoots = {() => {}}/>
             </div>
-            <h4 className = {"postcard-text"} >{name}'s Canola Plant</h4>
+            <h4 className = {"postcard-text"} >{name} THE CANOLA PLANT</h4>
         </div>);
 
     }

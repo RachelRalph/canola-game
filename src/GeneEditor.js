@@ -96,7 +96,7 @@ function GeneEditor({plantPart}) {
             <img src = {flowers[flowerColour]} alt = {"canola plant"} style = {{width : width[flowerColour]}}className = {"canola-flower"}/>
             <div className = "dna-selector">
                 <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} style = {{backgroundColor : "blue"}}/>
-                <button className = {"choice"}  id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}><h3 className = "sour-gummy-sub">Finish!</h3></button>
+                <button style = {{zIndex : 1}} className = {"choice"} id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}><h3 className = "sour-gummy-sub" style = {{zIndex : 1}}>Finish!</h3></button>
                 <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
             </div>
             <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>

@@ -25,9 +25,9 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
 
         return(
         <div className = {"colour-selector"}>
-            <div className = {"choice"} onClick = {() => setPods("few")}>
+            {/*<div className = {"choice"} onClick = {() => setPods("few")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>few pods</h3>
-            </div>
+        </div>*/}
             <div className = {"choice"} onClick = {() => setPods("many")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>more pods</h3>
             </div>
@@ -38,9 +38,9 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
     if (plantPart === 1){
         return(
         <div className = {"colour-selector"}>
-            <div className = {"choice"} onClick = {() => setRoots("short")}>
+            {/*<div className = {"choice"} onClick = {() => setRoots("short")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter roots</h3>
-            </div>
+        </div>*/}
             <div className = {"choice"} onClick = {() => setRoots("long")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer roots</h3>
             </div>
@@ -55,9 +55,9 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
             <div className = {"choice"} onClick = {() => setStem("short")}>
                 <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter plant</h3>
             </div>
-            <div className = {"choice"} onClick = {() => setStem("tall")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer plant</h3>
-            </div>
+            {/*<div className = {"choice"} onClick = {() => setStem("tall")}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer plant</h3>}
+            </div>*/}
         </div>);
 
     }

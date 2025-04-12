@@ -18,7 +18,7 @@ const root = document.getElementById('root');
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<Start />} />
+      <Route index element={<Start/>} />
       <Route path= "/game-flower" element={<GameFlower />} />
       <Route path= "/game-plant" element={<GamePlant />} />
       <Route path= "/slide" element={<Slide1 />} />
