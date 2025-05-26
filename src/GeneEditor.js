@@ -110,7 +110,7 @@ function GeneEditor({plantPart}) {
             <div className = "dna-selector">
                 <FeatureSelector plantPart = {plantPart} setRoots = {setRoots} setStem = {setHeight} setPods = {setPods}/>
                 <button id = "openModal" className = "choice" onClick = {() => {openModal(); console.log(isModalOpen); }}><h4 className = "sour-gummy-sub">Print!</h4></button>
-                {<PrintModal  isOpen = {isModalOpen} closeModal = {closeModal} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} isFlower = {false} /> }
+                <PrintModal  isOpen = {isModalOpen} closeModal = {closeModal} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} isFlower = {false} /> 
             </div>
             <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>
