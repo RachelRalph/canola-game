@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/canola-game/static/css/main.4c1faf5a.css",
+    "main.js": "/canola-game/static/js/main.f93dd1f8.js",
+    "static/js/453.54b7899a.chunk.js": "/canola-game/static/js/453.54b7899a.chunk.js",
+    "reactPlayerPreview.js": "/canola-game/static/js/reactPlayerPreview.b6831165.chunk.js",
+    "static/media/LandingPage.mp4": "/canola-game/static/media/LandingPage.28c5d483e42ef829c19b.mp4",
+    "static/media/DNA.webm": "/canola-game/static/media/DNA.cc3f560fc6006b3e7cef.webm",
+    "static/media/Background.png": "/canola-game/static/media/Background.027d14b388ddeef0a37c.png",
+    "static/media/purple_flower.png": "/canola-game/static/media/purple_flower.892b92b23006f06e3857.png",
+    "static/media/yellow_flower.png": "/canola-game/static/media/yellow_flower.b743cef91be0bd0c8381.png",
+    "static/media/blue_flower.png": "/canola-game/static/media/blue_flower.a26719bdd879d275abd7.png",
+    "static/media/white_flower.png": "/canola-game/static/media/white_flower.601d7eb0e2b82798a99a.png",
+    "static/media/LongRoots.png": "/canola-game/static/media/LongRoots.9a85f5b4db0aba4f8347.png",
+    "static/media/NEWTallPlantsMorePods.webm": "/canola-game/static/media/NEWTallPlantsMorePods.df80181d6e6c91a50c9d.webm",
+    "static/media/NEWTallPlantsMorePodsREVERSE.webm": "/canola-game/static/media/NEWTallPlantsMorePodsREVERSE.b65c3dccaa02c0d7fdc8.webm",
+    "static/media/PostcardBack.jpg": "/canola-game/static/media/PostcardBack.d062d8df811f7e95a73c.jpg",
+    "static/media/NEWShortPlantsMorePods.webm": "/canola-game/static/media/NEWShortPlantsMorePods.2547879807d58bdf531c.webm",
+    "static/media/TallPlant.png": "/canola-game/static/media/TallPlant.af378d1c0938f9092a99.png",
+    "static/media/ShortRoots.png": "/canola-game/static/media/ShortRoots.c8f8df7a749ace170500.png",
+    "static/media/NEW_NEWShortPlantsMorePodsREVERSE.webm": "/canola-game/static/media/NEW_NEWShortPlantsMorePodsREVERSE.ce5ac188ff676f299ab6.webm",
+    "static/media/ShortPlant.png": "/canola-game/static/media/ShortPlant.afdb47a5a307c54668bb.png",
+    "static/media/output.png": "/canola-game/static/media/output.e8b426d5c254051b3927.png",
+    "static/media/output.webp": "/canola-game/static/media/output.97b0b7de9a9cc5bc9dc1.webp",
+    "static/media/GrowingRoots.webm": "/canola-game/static/media/GrowingRoots.5bbf11ec683f80cab713.webm",
+    "static/media/NEWGrowingRootsReverse.webm": "/canola-game/static/media/NEWGrowingRootsReverse.18481e3fb1abc55972d4.webm",
+    "static/media/slide_1_landscape.jpeg": "/canola-game/static/media/slide_1_landscape.d7993e0bc65d09667e0c.jpeg",
+    "static/media/slide_2_hand.jpeg": "/canola-game/static/media/slide_2_hand.11fa8d1ac4be7a994a64.jpeg",
+    "static/media/DNA.png": "/canola-game/static/media/DNA.00c74b549c80a1351e3b.png",
+    "index.html": "/canola-game/index.html",
+    "main.4c1faf5a.css.map": "/canola-game/static/css/main.4c1faf5a.css.map",
+    "main.f93dd1f8.js.map": "/canola-game/static/js/main.f93dd1f8.js.map",
+    "453.54b7899a.chunk.js.map": "/canola-game/static/js/453.54b7899a.chunk.js.map",
+    "reactPlayerPreview.b6831165.chunk.js.map": "/canola-game/static/js/reactPlayerPreview.b6831165.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c1faf5a.css",
+    "static/js/main.f93dd1f8.js"
+  ]
+}
