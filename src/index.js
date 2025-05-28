@@ -11,12 +11,12 @@ import Slide1 from "./Pages/Slide1.js"
 import Slide2 from "./Pages/Slide2.js"
 import PlantSelection from "./Pages/PlantSelection.js"
 
-import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 const root = document.getElementById('root');
 
 ReactDOM.createRoot(root).render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route index element={<Start/>} />
       <Route path= "/game-flower" element={<GameFlower />} />
@@ -25,7 +25,7 @@ ReactDOM.createRoot(root).render(
       <Route path= "/slide2" element={<Slide2 />} />
       <Route path= "/choose-path" element={<PlantSelection />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 
