@@ -11,7 +11,7 @@ import Slide1 from "./Pages/Slide1.js"
 import Slide2 from "./Pages/Slide2.js"
 import PlantSelection from "./Pages/PlantSelection.js"
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as BrowserRouter, Routes, Route } from "react-router-dom";
 
 const root = document.getElementById('root');
 
