@@ -1,9 +1,11 @@
 import React from "react"
+import ReactDOMServer from 'react-dom/server';
 import Modal from 'react-modal';
 import {useRef} from 'react';
 import { useState } from 'react';
 
 import { useReactToPrint } from "react-to-print";
+
 
 import PostCard from "./PostCard.js";
 import PostcardBack from "./PostcardBack.js";
@@ -33,20 +35,27 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
     Modal.setAppElement(document.getElementById('root'));
 
     const handleSubmit = () => {
-        handlePrint();
-        
+        const html = ReactDOMServer.renderToStaticMarkup(<PostCard isFlower = {isFlower} flower = {flower} name = {"RACHEL"}/>);
+        window.electronAPI.printContent(html);
+         
     }
 
 
     //Set up state for printing
 
-    const componentRef = useRef();
+    /*const componentRef = useRef();
     let navigate = useNavigate();
     const handlePrint = useReactToPrint({
         documentTitle: 'Title',
         contentRef: componentRef,
         onAfterPrint: () => {console.log("hi"); closeModal(); setName(""); navigate("/");}
-      });
+      }); */
+
+
+    //Set up state to turn to pdf. 
+
+    const componentRef = useRef();
+
 
     //Global name variable for printing. 
 
@@ -74,7 +83,7 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
             </form>
         <Keyboard onChange = {onChange} layout = {layout} onKeyPress = {onKeyPress} style = {{width : "100vw"}} className = {"keyboard"}> </Keyboard>
         </Modal>
-        <div ref = {componentRef} className = {"hide"} >
+        <div ref = {componentRef} /* className = {"hide"} */ >
         <PostCard isFlower = {isFlower} flower = {flower} name = {name}/> 
         <PostcardBack/> 
         </div>
@@ -91,7 +100,7 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
                 </form>
                 <Keyboard onChange = {onChange} layout = {layout} onKeyPress = {onKeyPress} style = {{width : "100vw"}} className = {"keyboard"}> </Keyboard>
             </Modal>
-            <div ref = {componentRef} className = {"hide"} >
+            <div ref = {componentRef} /* className = {"hide"} */>
                 <PostCard isFlower = {isFlower} flower = {flower} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} name = {name}/> 
                 <PostcardBack/> 
             </div>
