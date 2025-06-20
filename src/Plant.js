@@ -40,7 +40,9 @@ export function Roots({getRoots, getAnimateRoots, setAnimateRoots}){
 }
 
 export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
-    if (getHeight() === "short" && getPods() === "few"){
+    console.log(getHeight() === "short");
+    console.log(getHeight());
+    if (getHeight() == "short" && getPods() == "few"){
         return( 
         <div className = "shortPlant shortPlantFewPods pos-div">
         <Animation video = {shortPlantGrowingPodsReverse} png = {shortPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/>
@@ -58,6 +60,9 @@ export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
 
     else if(getHeight() === "tall" && getPods() === "many"){
         return (<div className = "tallPlant tallPlantManyPods pos-div"><Animation video = {tallPlantGrowingPods} png = {tallPlantManyPods} getAnimate= {animatePods} setAnimate = {setAnimatePods}/></div> );
+    }
+    else{
+        return(<h1>AAAAAAAHHHHHHH!!!!!!,{getHeight()},{getPods()}</h1>)
     }
 
     

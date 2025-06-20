@@ -1,5 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  printContent: (html) => ipcRenderer.send('print-content', html)
+  printContent: ({flower, roots, height, pods}) => ipcRenderer.send('print-content', {flower, roots, height, pods, name})
 });

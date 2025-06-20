@@ -13,7 +13,6 @@ import { useState } from 'react';
 
 import FeatureSelector from "./FeatureSelector.js"
 
-import PostCard from "./PostCard"
 
 import Dna from "./Dna";
 
@@ -97,7 +96,7 @@ function GeneEditor({plantPart}) {
             <div className = "dna-selector">
                 <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} style = {{backgroundColor : "blue"}}/>
                 <button style = {{zIndex : 1}} className = {"choice"} id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}><h3 className = "sour-gummy-sub" style = {{zIndex : 1}}>Finish!</h3></button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowers[flowerColour]} isFlower = {true} type = {flowerColour}/>
+                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowerColour} isFlower = {true} type = {flowerColour}/>
             </div>
             <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>

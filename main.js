@@ -10,17 +10,18 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL("http://localhost:3000");
+  mainWindow.loadFile("public/index.html");
 }
 
 app.whenReady().then(createWindow);
 
-ipcMain.on('print-content', (event, htmlContent) => {
+ipcMain.on('print-content', (event, {flower, roots, height, pods, name}) => {
   const printWindow = new BrowserWindow({ show: true});
-  printWindow.loadURL('data:text/html;charset=utf-8,' + encodeURIComponent(htmlContent));
+  printWindow.loadURL(`http://localhost:3000/#/postcard?colour=${flower}&roots=${roots}&pods=${pods}&height=${height}&name=${name}`);
+  console.log(`http://localhost:3000/#/postcard?colour=${flower}&roots=${roots}&pods=${pods}&height=${height}&name=${name}`);
 
   printWindow.webContents.on('did-finish-load', () => {
-    printWindow.webContents.print({ silent: true, printBackground: true }, (success, errorType) => {
+    printWindow.webContents.print({ silent: false, printBackground: true }, (success, errorType) => {
       if (!success) console.error(errorType);
       printWindow.close();
     });

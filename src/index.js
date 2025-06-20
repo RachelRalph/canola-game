@@ -10,6 +10,7 @@ import Start from "./Pages/Start.js"
 import Slide1 from "./Pages/Slide1.js"
 import Slide2 from "./Pages/Slide2.js"
 import PlantSelection from "./Pages/PlantSelection.js"
+import PostCard from "./Pages/Postcard.js"
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 
@@ -24,6 +25,7 @@ ReactDOM.createRoot(root).render(
       <Route path= "/slide" element={<Slide1 />} />
       <Route path= "/slide2" element={<Slide2 />} />
       <Route path= "/choose-path" element={<PlantSelection />} />
+      <Route path = "/postcard/" element ={<PostCard />} />
     </Routes>
   </HashRouter>
 );

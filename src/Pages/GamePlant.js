@@ -9,7 +9,7 @@ import GeneEditor from "../GeneEditor.js";
 
 function PlantMaker() {
 
-    const [plantPart, setPlantPart] = useState(1);
+    const [plantPart, setPlantPart] = useState(0);
     const plantParts = ["flowers",  "roots", "stem", "pods"];
 
 
@@ -19,7 +19,7 @@ function PlantMaker() {
     };
 
     const plant_text = [
-        "",
+        "Canola flowers are yellow by default. \n As the plant matures, these flowers fall away and are replaced by seed pods.",
         "By default, canola plants have shallow roots which don’t hold much water. This makes them more susceptible to drought. \n Deeper roots will increase their drought tolerance.",
         "By default, canola plants are tall. This means they need more water to travel all the way up their stems to their leaves. \n A shorter stem increases drought tolerance.",
         "Canola seed pods are where much of their food value comes from. \n Adding more pods increases their yield and strengthens the food supply."

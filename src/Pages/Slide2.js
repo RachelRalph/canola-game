@@ -13,7 +13,7 @@ const Slide2 = () => {
             This technology is just like the selective breeding farmers have been doing for
             centuries – except it’s targeted at the genetic level!
             Now it’s your turn to design a canola plant!</h5>
-            <Link to="/choose-path" className = "arrow sour-gummy">&gt;</Link>
+            <Link to="/game-plant" className = "arrow sour-gummy">&gt;</Link>
         </div>
     )
 };

@@ -10,6 +10,8 @@
         size: 101.6mm 152.4mm;
     }
 
+}
+
 .back{
     width: 100vw;
     height: 99vh;
@@ -34,32 +36,22 @@
     margin: 0px;
     
 }
-.postcard-flower {
-    z-index: 0;
-    position: absolute;
-    width: 80vw;
-    left: 10vw;
-    top: -10vh;
 
-    
-}
-
-.postcard-plant {
-    z-index: 0;
+.postcard-flower{
     position: absolute;
-    width: 70vw;
-    left: 5vw;
-    top: 10vh;
-}
+    left: 15vw;
+    width: 22vw;
+    z-index: 1;
+    top: 0px;
+  }
 
-.postcard-text {
-    z-index: 0;
+.postcard-plant{
     position: absolute;
-    text-align: center;
-    top: 90vh;
-    margin: auto;
+    left: 45vw;
+    top: 5vw;
     width: 100vw;
-}
+    z-index: 1;
+
 }
 
 

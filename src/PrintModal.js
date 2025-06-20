@@ -7,8 +7,6 @@ import { useState } from 'react';
 import { useReactToPrint } from "react-to-print";
 
 
-import PostCard from "./PostCard.js";
-import PostcardBack from "./PostcardBack.js";
 
 import Plant from "./Plant.js"
 
@@ -19,6 +17,8 @@ import { useNavigate} from "react-router-dom";
 
 
 function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, isFlower, type}){
+
+
 
     const layout = {
         'default': [
@@ -35,8 +35,14 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
     Modal.setAppElement(document.getElementById('root'));
 
     const handleSubmit = () => {
-        const html = ReactDOMServer.renderToStaticMarkup(<PostCard isFlower = {isFlower} flower = {flower} name = {"RACHEL"}/>);
-        window.electronAPI.printContent(html);
+        console.log(flower + "\n");
+        console.log(getRoots);
+
+        const roots = getRoots();
+        const height = getHeight();
+        const pods = getPods();
+
+        window.electronAPI.printContent({flower, roots, height, pods, name});
          
     }
 
@@ -83,10 +89,6 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
             </form>
         <Keyboard onChange = {onChange} layout = {layout} onKeyPress = {onKeyPress} style = {{width : "100vw"}} className = {"keyboard"}> </Keyboard>
         </Modal>
-        <div ref = {componentRef} /* className = {"hide"} */ >
-        <PostCard isFlower = {isFlower} flower = {flower} name = {name}/> 
-        <PostcardBack/> 
-        </div>
         </div>);
         
     }
@@ -100,10 +102,6 @@ function PrintModal({isOpen, closeModal, flower, getRoots, getHeight, getPods, i
                 </form>
                 <Keyboard onChange = {onChange} layout = {layout} onKeyPress = {onKeyPress} style = {{width : "100vw"}} className = {"keyboard"}> </Keyboard>
             </Modal>
-            <div ref = {componentRef} /* className = {"hide"} */>
-                <PostCard isFlower = {isFlower} flower = {flower} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} name = {name}/> 
-                <PostcardBack/> 
-            </div>
     
             </div>);
     }
