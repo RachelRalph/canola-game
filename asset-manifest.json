@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/canola-game/static/css/main.2751eebd.css",
+    "main.css": "/canola-game/static/css/main.d12034eb.css",
     "main.js": "/canola-game/static/js/main.2e11b9d1.js",
     "static/js/453.d8711a50.chunk.js": "/canola-game/static/js/453.d8711a50.chunk.js",
     "reactPlayerPreview.js": "/canola-game/static/js/reactPlayerPreview.768a5f36.chunk.js",
@@ -32,13 +32,13 @@
     "static/media/slide_2_hand.jpeg": "/canola-game/static/media/slide_2_hand.11fa8d1ac4be7a994a64.jpeg",
     "static/media/NEWGrowingRootsReverse.webm": "/canola-game/static/media/NEWGrowingRootsReverse.4456387d98c710a73d34.webm",
     "index.html": "/canola-game/index.html",
-    "main.2751eebd.css.map": "/canola-game/static/css/main.2751eebd.css.map",
+    "main.d12034eb.css.map": "/canola-game/static/css/main.d12034eb.css.map",
     "main.2e11b9d1.js.map": "/canola-game/static/js/main.2e11b9d1.js.map",
     "453.d8711a50.chunk.js.map": "/canola-game/static/js/453.d8711a50.chunk.js.map",
     "reactPlayerPreview.768a5f36.chunk.js.map": "/canola-game/static/js/reactPlayerPreview.768a5f36.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2751eebd.css",
+    "static/css/main.d12034eb.css",
     "static/js/main.2e11b9d1.js"
   ]
 }
