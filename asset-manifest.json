@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/canola-game/static/css/main.e6f0367f.css",
-    "main.js": "/canola-game/static/js/main.7ce6de5d.js",
+    "main.js": "/canola-game/static/js/main.578eba58.js",
     "static/js/453.d8711a50.chunk.js": "/canola-game/static/js/453.d8711a50.chunk.js",
     "reactPlayerPreview.js": "/canola-game/static/js/reactPlayerPreview.768a5f36.chunk.js",
     "static/media/LandingPage.mp4": "/canola-game/static/media/LandingPage.f8b42b3c6d22d73b148c.mp4",
@@ -10,8 +10,11 @@
     "static/media/NEWTallPlantsMorePods.png": "/canola-game/static/media/NEWTallPlantsMorePods.cdb559989df60123fa64.png",
     "static/media/DNA.webm": "/canola-game/static/media/DNA.cc3f560fc6006b3e7cef.webm",
     "static/media/NEW_NEWShortPlantsMorePodsREVERSE.png": "/canola-game/static/media/NEW_NEWShortPlantsMorePodsREVERSE.b126e2bb49d973b8ed1a.png",
+    "static/media/DNA.png": "/canola-game/static/media/DNA.54f65def6b92b43b2efe.png",
     "static/media/Background.png": "/canola-game/static/media/Background.027d14b388ddeef0a37c.png",
     "static/media/STILL_DNA.png": "/canola-game/static/media/STILL_DNA.859c190b322875c46e5e.png",
+    "static/media/NEWGrowingRootsReverse.png": "/canola-game/static/media/NEWGrowingRootsReverse.881873a4dd79f6ac583e.png",
+    "static/media/GrowingRoots.png": "/canola-game/static/media/GrowingRoots.ca77a6ec00eb24e37706.png",
     "static/media/LongRoots.png": "/canola-game/static/media/LongRoots.e7db9bd1b60c518186e9.png",
     "static/media/TallPlant.png": "/canola-game/static/media/TallPlant.9a25f104ca90c7d19534.png",
     "static/media/ShortRoots.png": "/canola-game/static/media/ShortRoots.c6e283de79c03e5db803.png",
@@ -30,12 +33,12 @@
     "static/media/NEWGrowingRootsReverse.webm": "/canola-game/static/media/NEWGrowingRootsReverse.4456387d98c710a73d34.webm",
     "index.html": "/canola-game/index.html",
     "main.e6f0367f.css.map": "/canola-game/static/css/main.e6f0367f.css.map",
-    "main.7ce6de5d.js.map": "/canola-game/static/js/main.7ce6de5d.js.map",
+    "main.578eba58.js.map": "/canola-game/static/js/main.578eba58.js.map",
     "453.d8711a50.chunk.js.map": "/canola-game/static/js/453.d8711a50.chunk.js.map",
     "reactPlayerPreview.768a5f36.chunk.js.map": "/canola-game/static/js/reactPlayerPreview.768a5f36.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6f0367f.css",
-    "static/js/main.7ce6de5d.js"
+    "static/js/main.578eba58.js"
   ]
 }
