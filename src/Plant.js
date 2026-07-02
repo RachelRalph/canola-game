@@ -57,7 +57,7 @@ export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
         </div>);
     }
     else if (getHeight() === "tall" && getPods() === "few"){
-        return (<div className = "asset-shell plant-shell"> <Animation kind="plant" video = {tallPlantGrowingPodsReverse} safariVideo={tallPlantGrowingPodsReverseSafari} png = {tallPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods} durationMs={4466}/></div>);
+        return (<div className = "asset-shell plant-shell tall-plant-shell"> <Animation kind="plant" video = {tallPlantGrowingPodsReverse} safariVideo={tallPlantGrowingPodsReverseSafari} png = {tallPlantFewPods} getAnimate= {animatePods} setAnimate = {setAnimatePods} durationMs={4466}/></div>);
     }
 
     else if(getHeight() === "short"  && getPods() === "many"){
@@ -67,7 +67,7 @@ export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
     }
 
     else if(getHeight() === "tall" && getPods() === "many"){
-        return (<div className = "asset-shell plant-shell"><Animation kind="plant" video = {tallPlantGrowingPods} safariVideo={tallPlantGrowingPodsSafari} png = {tallPlantManyPods} getAnimate= {animatePods} setAnimate = {setAnimatePods} durationMs={4466}/></div> );
+        return (<div className = "asset-shell plant-shell tall-plant-shell tall-pods-shell"><Animation kind="plant" video = {tallPlantGrowingPods} safariVideo={tallPlantGrowingPodsSafari} png = {tallPlantManyPods} getAnimate= {animatePods} setAnimate = {setAnimatePods} durationMs={4466}/></div> );
     }
     else{
         return(<h1>AAAAAAAHHHHHHH!!!!!!,{getHeight()},{getPods()}</h1>)
@@ -81,9 +81,10 @@ export function Stem({getHeight, getPods, animatePods, setAnimatePods}){
 
 
 function Plant({getPods, getRoots, getHeight, getAnimatePods, getAnimateRoots,  setAnimatePods, setAnimateRoots}){
+    const plantStackClassName = getHeight() === "tall" ? "plant-stack tall-plant-stack" : "plant-stack";
 
     return(
-    <div className="plant-stack">
+    <div className={plantStackClassName}>
     <Stem getHeight = {getHeight} getPods = {getPods} animatePods = {getAnimatePods} setAnimatePods = {setAnimatePods}/>
     <Roots getRoots = {getRoots} getAnimateRoots = {getAnimateRoots} setAnimateRoots = {setAnimateRoots}/>
     </div>);
