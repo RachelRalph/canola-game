@@ -13,7 +13,7 @@ import postcard_background from "../Assets/Normalized/postcard/PostcardBackgroun
 import Plant from "../Plant.js"
 
 const POSTCARD_DISPLAY_MS = 5000;
-const AUTO_RETURN_TO_HOME = false;
+const AUTO_RETURN_TO_HOME = true;
 
 const Postcard = () => {
     const location = useLocation();
