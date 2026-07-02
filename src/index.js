@@ -4,28 +4,27 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-import GameFlower from "./Pages/GameFlower.js"
 import GamePlant from "./Pages/GamePlant.js"
 import Start from "./Pages/Start.js"
 import Slide1 from "./Pages/Slide1.js"
 import Slide2 from "./Pages/Slide2.js"
 import PlantSelection from "./Pages/PlantSelection.js"
-import PostCard from "./Pages/Postcard.js"
+import Postcard from "./Pages/Postcard.js"
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 const root = document.getElementById('root');
 
+// Keep the web bundle anchored to the current source tree so dev-server rebuilds cleanly.
 ReactDOM.createRoot(root).render(
   <HashRouter>
     <Routes>
       <Route index element={<Start/>} />
-      <Route path= "/game-flower" element={<GameFlower />} />
       <Route path= "/game-plant" element={<GamePlant />} />
       <Route path= "/slide" element={<Slide1 />} />
       <Route path= "/slide2" element={<Slide2 />} />
       <Route path= "/choose-path" element={<PlantSelection />} />
-      <Route path = "/postcard/" element ={<PostCard />} />
+      <Route path= "/postcard" element={<Postcard />} />
     </Routes>
   </HashRouter>
 );

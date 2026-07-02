@@ -1,0 +1,32 @@
+{
+  "flowers": {
+    "yellow": "stills/flowers/yellow_flower.png",
+    "white": "stills/flowers/white_flower.png",
+    "blue": "stills/flowers/blue_flower.png",
+    "purple": "stills/flowers/purple_flower.png"
+  },
+  "roots": {
+    "short_still": "stills/roots/ShortRoots.png",
+    "long_still": "stills/roots/LongRoots.png",
+    "grow_forward": "animations/GrowingRoots.webm",
+    "grow_reverse": "animations/NEWGrowingRootsReverse.webm"
+  },
+  "plants": {
+    "short_still": "stills/plants/ShortPlant.png",
+    "tall_still": "stills/plants/TallPlant.png",
+    "short_pods_still": "stills/plants/output.png",
+    "tall_pods_still": "animations/output.webp",
+    "short_pods_grow_forward": "animations/NEWShortPlantsMorePods.png",
+    "short_pods_grow_reverse": "animations/NEW_NEWShortPlantsMorePodsREVERSE.png",
+    "tall_pods_grow_forward": "animations/NEWTallPlantsMorePods.png",
+    "tall_pods_grow_reverse": "animations/NEWTallPlantsMorePodsREVERSE.png"
+  },
+  "dna": {
+    "still": "animations/STILL_DNA.png",
+    "animated": "animations/DNA.webm"
+  },
+  "landing": {
+    "video": "animations/LandingPage.mp4",
+    "postcard_background": "postcard/PostcardBackground.png"
+  }
+}

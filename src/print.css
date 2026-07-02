@@ -48,13 +48,65 @@
 .postcard-plant{
     position: absolute;
     left: 45vw;
-    top: 5vw;
+    top: -20vw;
     width: 100vw;
     z-index: 1;
 
 }
 
+@media screen and (min-width: 768px) and (max-width: 1180px) {
+    .postcard-div .postcard-name {
+        top: 0.85rem;
+        padding-top: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+        font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+        line-height: 1.05;
+    }
 
+    .postcard-div .postcard-flower {
+        left: 10vw;
+        top: 18vh;
+        width: 50vh;
+        height: auto;
+    }
 
+    .postcard-div .postcard-plant {
+        left: 65vw;
+        right: clamp(1rem, 3vw, 3rem);
+        top: 17vh;
+        width: clamp(12rem, 24vw, 18rem);
+    }
 
+    .postcard-div .plant-stack {
+        width: 100%;
+        margin-top: -35vh;
+        gap: 0.1rem;
+        align-items: center;
+        transform: scale(2.5);
+        transform-origin: top center;
+    }
 
+    .postcard-div .roots-shell {
+        width: clamp(10rem, 18vw, 14rem);
+        height: clamp(5rem, 9vh, 7rem);
+        margin-top: -1rem;
+    }
+
+    .postcard-div .plant-shell {
+        width: clamp(11rem, 20vw, 15rem);
+        height: clamp(13rem, 22vh, 17rem);
+        margin-top: 0;
+    }
+
+    .postcard-div .short-plant-shell {
+        top: 0;
+        left: 0;
+    }
+
+    .postcard-div .short-pods-shell {
+        top: 0;
+        left: 0;
+    }
+}

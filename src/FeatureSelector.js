@@ -1,4 +1,43 @@
-function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, getRoots, getStem, getPods}){
+import "./App.css";
+import EmailModal from "./EmailModal.js";
+import {useState} from 'react';
+
+
+
+function FeatureSelector({plantPart, getColour, setFlowers, setRoots, setStem, setPods, getRoots, getHeight, getPods, togglePlant, flower}){
+
+    async function toggleAfterDelay() {
+        console.log("Starting...");
+        await delay(3000); // Pause for 3 seconds
+        togglePlant();
+        console.log("Resuming after 3 seconds.");
+
+      }
+
+      async function openModalAfterDelay() {
+        console.log("Starting...");
+        await delay(3000); // Pause for 3 seconds
+        openModal();
+        console.log("Resuming after 3 seconds.");
+
+      }
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    //Set up modal props
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    function openModal() {
+        setModalOpen(true);
+    }
+
+    function closeModal() {
+        setModalOpen(false);
+    }
+    
 
 
     if (plantPart === 0){
@@ -17,7 +56,11 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
         <div className = {"choice"} onClick = {() => setFlowers(3)}>
             <h3 className = {"sour-gummy-sub"}>purple</h3>
         </div>
+        <div className = {"choice"} onClick = {() => togglePlant()}>
+            <h3 className = {"sour-gummy-sub"}>Continue</h3>
         </div>
+        </div>
+
         );
     } 
 
@@ -25,24 +68,26 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
 
         return(
         <div className = {"colour-selector"}>
-            {/*<div className = {"choice"} onClick = {() => setPods("few")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>few pods</h3>
-        </div>*/}
-            <div className = {"choice"} onClick = {() => setPods("many")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>more pods</h3>
+            <div className = {"choice"} onClick = {() => {setPods("many"); openModalAfterDelay()}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>Add more pods</h3>
             </div>
-        </div>);
+            <div className = {"choice"} onClick = {() => {openModal()}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>Keep current pods</h3>
+            </div>
+            <EmailModal className = {"modal"} isOpen = {isModalOpen} closeModal = {closeModal} getColour = {getColour} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} ></EmailModal>
+        </div>
+        );
 
     } 
 
     if (plantPart === 1){
         return(
         <div className = {"colour-selector"}>
-            {/*<div className = {"choice"} onClick = {() => setRoots("short")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter roots</h3>
-        </div>*/}
-            <div className = {"choice"} onClick = {() => setRoots("long")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer roots</h3>
+            <div className = {"choice"} onClick = {() => {setRoots("long"); toggleAfterDelay();}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>Change to longer roots</h3>   
+            </div>
+            <div className = {"choice"} onClick = {() => {togglePlant()}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}} >Continue with Short Roots</h3>
             </div>
         </div>);}
     
@@ -52,12 +97,13 @@ function FeatureSelector({plantPart, setFlowers, setRoots, setStem, setPods, get
 
         return(
         <div className = {"colour-selector"}>
-            <div className = {"choice"} onClick = {() => setStem("short")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>shorter plant</h3>
+            <div className = {"choice"} onClick = {() => {setStem("short"); toggleAfterDelay();}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>Change to shorter plant</h3>
             </div>
-            {/*<div className = {"choice"} onClick = {() => setStem("tall")}>
-                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>longer plant</h3>}
-            </div>*/}
+            <div className = {"choice"} onClick = {() => {togglePlant()}}>
+                <h3 className = {"sour-gummy-sub"} style = {{lineHeight : "120%"}}>Keep tall plant</h3>
+            </div>
+            
         </div>);
 
     }

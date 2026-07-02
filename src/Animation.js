@@ -1,20 +1,69 @@
 import ReactPlayer from "react-player/file";
-import { useState } from "react";
+import { useEffect } from "react";
 
-function Animation({video, png, getAnimate, setAnimate}) {
+function isSafari() {
+  if (typeof navigator === "undefined") {
+    return false;
+  }
 
-    const onEnd = () =>{
+  const ua = navigator.userAgent || "";
+  const vendor = navigator.vendor || "";
+
+  return /Safari/i.test(ua) && /Apple/i.test(vendor) && !/Chrome|Chromium|CriOS|FxiOS|Edg/i.test(ua);
+}
+
+function Animation({
+  video,
+  safariVideo,
+  png,
+  getAnimate,
+  setAnimate,
+  durationMs = 2000,
+  kind = "generic",
+  extraClassName = "",
+  stillClassName = "",
+}) {
+    const isAnimating = getAnimate();
+    const animationSource = isSafari() && safariVideo ? safariVideo : video;
+    const animatedImage = typeof animationSource === "string" && animationSource.toLowerCase().endsWith(".png");
+
+    useEffect(() => {
+      if (!isAnimating) {
+        return undefined;
+      }
+
+      const timer = window.setTimeout(() => {
         setAnimate(false);
+      }, durationMs);
+
+      return () => window.clearTimeout(timer);
+    }, [durationMs, isAnimating, setAnimate]);
+
+    if (isAnimating){
+    if (animatedImage) {
+      return (
+        <img
+          src={animationSource}
+          className={`asset-media asset-animation asset-${kind} ${extraClassName}`.trim()}
+          alt=""
+        />
+      );
     }
 
-    if (getAnimate()){
     return (
-       <ReactPlayer url = {video} muted = {true} playing={true} loop={false}  onEnded = {onEnd} className = "animation pos-div-2"></ReactPlayer>
+       <ReactPlayer
+         url={animationSource}
+         muted={true}
+         playing={true}
+         loop={false}
+         onEnded={() => setAnimate(false)}
+         className={`asset-media asset-animation asset-${kind} ${extraClassName}`.trim()}
+       />
         );
     }
     else {
         return(
-        <img src = {png} className = "image"></img>
+        <img src={png} className={`asset-media asset-image asset-${kind} ${stillClassName}`.trim()} alt="" />
         );
     }
 }

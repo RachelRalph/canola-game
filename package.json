@@ -1,29 +1,26 @@
 {
   "name": "canola-test",
   "version": "0.1.0",
-  "private": false,
   "homepage": "https://rachelralph.github.io/canola-game",
-  "main": "main.js",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-modal": "^3.16.3",
+    "react-native": "0.85.3",
     "react-player": "^2.16.0",
+    "react-router-dom": "^7.4.0",
     "react-scripts": "^5.0.1",
-    "react-simple-keyboard": "^3.8.61",
-    "react-to-pdf": "^2.0.1",
-    "react-to-print": "^3.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm start",
-    "build": "npm build",
-    "electron": "electron main.js",
-    "package": "electron package"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,27 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@electron/fuses": "^1.8.0",
-    "@electron/packager": "^18.3.6",
     "@types/react-dom": "^19.1.6",
-    "electron": "^36.5.0",
-    "electron-packager": "^17.1.2",
-    "gh-pages": "^6.3.0",
-    "react-router-dom": "^7.4.0"
-  },
-  "build": {
-    "appId": "com.my-electron-app",
-    "productName": "MyElectronApp",
-    "extends": null,
-    "forceCodeSigning": false,
-    "mac": {
-      "target": "dmg"
-    },
-    "win": {
-      "target": "nsis-web"
-    },
-    "linux": {
-      "target": "AppImage"
-    }
+    "gh-pages": "^6.3.0"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "slug": "canola-app",
+    "extra": {
+      "eas": {
+        "slug": "canola-app",
+        "projectId": "ad2577f9-275d-44f4-9f07-61cc0f264d87"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.thenerdyjedi.canolaapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.thenerdyjedi.canolaapp"
+    }
+  }
+}

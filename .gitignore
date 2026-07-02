@@ -10,6 +10,9 @@
 
 # production
 /build
+/dist
+/canola-game-win32-x64
+*.7z
 
 # misc
 .DS_Store

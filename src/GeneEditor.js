@@ -1,10 +1,9 @@
-import y_canola_flowers from "./Assets/yellow_flower.png"
-import w_canola_flowers from "./Assets/white_flower.png"
-import b_canola_flowers from "./Assets/blue_flower.png"
-import p_canola_flowers from "./Assets/purple_flower.png"
+import y_canola_flowers from "./Assets/Normalized/stills/flowers/yellow_flower.png"
+import w_canola_flowers from "./Assets/Normalized/stills/flowers/white_flower.png"
+import b_canola_flowers from "./Assets/Normalized/stills/flowers/blue_flower.png"
+import p_canola_flowers from "./Assets/Normalized/stills/flowers/purple_flower.png"
 
 
-import PrintModal from "./PrintModal.js";
 import Plant from "./Plant.js"
 
 import './App.css';
@@ -16,18 +15,23 @@ import FeatureSelector from "./FeatureSelector.js"
 
 import Dna from "./Dna";
 
-function GeneEditor({plantPart}) {
+function GeneEditor({getPlantPart, togglePlant, className = ""}) {
 
 
     //Hooks for the colour of the flower. 
 
     const [flowerColour, setFlowerColour] = useState(0);
     const flowers = [y_canola_flowers, w_canola_flowers, b_canola_flowers, p_canola_flowers];
-    const width = ["25vw", "23.5vw", "28vw", "25vw"]
+
+
+    const getColour = () => {
+        return flowerColour;
+    }
 
     const changeColour = (colour) => {
         setFlowerColour(colour);
         setAnimateDNA(true);
+
     }
 
     //Hooks for the root / pod / height combinations
@@ -74,29 +78,21 @@ function GeneEditor({plantPart}) {
 
     
   
-    //Set up modal props
-
-    const [isModalOpen, setModalOpen] = useState(false);
-
-    function openModal() {
-        setModalOpen(true);
-    }
-
-    function closeModal() {
-        setModalOpen(false);
-    }
 
     
 
 
-    if (plantPart === 0){
+    if (getPlantPart() === 0){
+        const isFlowerStage = className.includes("flower-stage");
         return (
-            <div className = "gene-editor">
-            <img src = {flowers[flowerColour]} alt = {"canola plant"} style = {{width : width[flowerColour]}}className = {"canola-flower"}/>
+            <div className = {`gene-editor ${className}`.trim()}>
+            <img
+                src = {flowers[flowerColour]}
+                alt = {"canola plant"}
+                className = {isFlowerStage ? "flower-art flower-stage-art" : "flower-art"}
+            />
             <div className = "dna-selector">
-                <FeatureSelector plantPart = {plantPart} setFlowers = {changeColour} style = {{backgroundColor : "blue"}}/>
-                <button style = {{zIndex : 1}} className = {"choice"} id = "openModal" onClick = {() => {openModal(); console.log(isModalOpen);}}><h3 className = "sour-gummy-sub" style = {{zIndex : 1}}>Finish!</h3></button>
-                <PrintModal isOpen = {isModalOpen} closeModal = {closeModal} flower = {flowerColour} isFlower = {true} type = {flowerColour}/>
+                <FeatureSelector plantPart = {getPlantPart()} togglePlant = {togglePlant} getColour = {getColour} setFlowers = {changeColour} style = {{backgroundColor : "blue"}}/>
             </div>
             <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>
@@ -104,12 +100,10 @@ function GeneEditor({plantPart}) {
     }
     else{
         return (
-            <div className = "gene-editor">
+            <div className = {`gene-editor ${className}`.trim()}>
             <Plant getRoots = {getRoots} getPods = {getPods} getAnimateRoots = {getAnimateRoots} getAnimatePods = {getAnimatePods} setAnimateRoots = {setAnimateRoots} setAnimatePods = {setAnimatePods} getHeight = {getHeight}/>
             <div className = "dna-selector">
-                <FeatureSelector plantPart = {plantPart} setRoots = {setRoots} setStem = {setHeight} setPods = {setPods}/>
-                <button id = "openModal" className = "choice" onClick = {() => {openModal(); console.log(isModalOpen); }}><h4 className = "sour-gummy-sub">Print!</h4></button>
-                <PrintModal  isOpen = {isModalOpen} closeModal = {closeModal} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} isFlower = {false} /> 
+                <FeatureSelector plantPart = {getPlantPart()}  togglePlant = {togglePlant} setRoots = {setRoots} setStem = {setHeight} getColour = {getColour} setPods = {setPods} getRoots = {getRoots} getHeight = {getHeight} getPods = {getPods} flower = {flowers[getColour()]}/>
             </div>
             <Dna isPlaying = {animateDNA} setAnimateDNA = {setAnimateDNA}/>
             </div>

@@ -1,8 +1,8 @@
 import '../App.css';
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import ReactPlayer from "react-player/file";
 
-import video from "../Assets/Animations/LandingPage.mp4"
+import video from "../Assets/Normalized/animations/LandingPage.mp4"
 
 const Start = () => {
   return (

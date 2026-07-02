@@ -1,13 +1,13 @@
 import '../App.css';
 import "../index.css";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-import s_background from "../Assets/slide_1_landscape.jpeg"
+import s_background from "../Assets/Normalized/postcard/slide_1_landscape.jpeg"
 
 const Slide1 = () => {
     return (
         <div className = {"slide-div"}>
-         <img className = {"background"} src ={s_background}/>
+         <img className = {"background"} src ={s_background} alt="" />
             <h5 className = "slide-text sour-gummy">Canola is an essential part of Canada’s economy and food supply.
             Yet droughts and heat waves increasingly put farmers’ crops at risk.</h5>
             <Link to="/slide2" className = "arrow sour-gummy">&gt;</Link>

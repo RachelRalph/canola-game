@@ -1,13 +1,13 @@
 import '../App.css';
-import { Link } from "react-router";
-import s_background from "../Assets/slide_2_hand.jpeg"
+import { Link } from "react-router-dom";
+import s_background from "../Assets/Normalized/postcard/slide_2_hand.jpeg"
 
 
 
 const Slide2 = () => {
     return (
         <div className = "slide-div">
-             <img className = {"background"} src ={s_background}/>
+             <img className = {"background"} src ={s_background} alt="" />
             <h5 className = "slide-text sour-gummy">UCalgary researchers are using gene editing to develop drought-tolerant
             canola plants and secure our food supply.
             This technology is just like the selective breeding farmers have been doing for
